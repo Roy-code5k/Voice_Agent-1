@@ -21,8 +21,8 @@ if not secret("GEMINI_API_KEY"):
     st.error("No GEMINI_API_KEY in this app's Secrets. On share.streamlit.io: your app → ┇ → Settings → Secrets.")
     st.stop()
     @st.cache_resource  # one Gemini client, created once, not on every click
-def gemini():
-    return genai.Client(api_key=secret("GEMINI_API_KEY"))
+    def gemini():
+        return genai.Client(api_key=secret("GEMINI_API_KEY"))
 
 gem = gemini()
 
